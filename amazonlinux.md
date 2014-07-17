@@ -50,6 +50,10 @@ Edit `/etc/sysctl.conf`
 ---------
 ## Install Erlang
 
+`sudo yum install erlang`
+
+## Install Erlang from source
+
 `mkdir ~/opt`
 
 `sudo yum install ncurses-devel`
