@@ -1,6 +1,6 @@
 #Setup tsung for AmazonLinux
 
-This is a note for setup erlang-R16B03-1 and Tsung-1.5.0 on AmazonLinux.
+This is a note for setup erlang-17.1 and Tsung-1.5.1 on AmazonLinux.
 
 Reference -> http://www.slideshare.net/ngocdaothanh/tsung-13985127 (Tsung 1.4.2)
 
