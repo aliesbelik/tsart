@@ -60,7 +60,7 @@ Edit `/etc/sysctl.conf`
 
 `tar xzf otp_src_17.1.tar.gz`
 
-`cd otp_src_R16B03-1`
+`cd otp_src_17.1`
 
 `./configure --prefix=$HOME/opt/erlang-17.1`
 
