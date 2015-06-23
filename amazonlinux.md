@@ -1,6 +1,6 @@
 #Setup tsung for AmazonLinux
 
-This is a note for setup erlang-R16B03-1 and Tsung-1.5.0 on AmazonLinux.
+This is a note for setup erlang-17.5 and Tsung-1.5.1 on AmazonLinux.
 
 Reference -> http://www.slideshare.net/ngocdaothanh/tsung-13985127 (Tsung 1.4.2)
 
@@ -56,30 +56,30 @@ Edit `/etc/sysctl.conf`
 
 `sudo yum install openssl-devel`
 
-`wget http://www.erlang.org/download/otp_src_R16B03-1.tar.gz`
+`wget http://www.erlang.org/download/otp_src_17.5.tar.gz`
 
-`tar xzf otp_src_R16B03-1.tar.gz`
+`tar xzf otp_src_17.5.tar.gz`
 
-`cd otp_src_R16B03-1`
+`cd otp_src_17.5`
 
-`./configure --prefix=$HOME/opt/erlang-R16B03-1`
+`./configure --prefix=$HOME/opt/erlang-17.5`
 
 `make install`
 
-`sudo echo 'pathmunge /home/ec2-user/opt/erlang-R16B03-1/bin' > /etc/profile.d/erlang.sh`
+`sudo echo 'pathmunge /home/ec2-user/opt/erlang-17.5/bin' > /etc/profile.d/erlang.sh`
 
 `sudo chmod +x /etc/profile.d/erlang.sh`
 
 ---------
 ## Install Tsung
 
-`wget http://tsung.erlang-projects.org/dist/tsung-1.5.0.tar.gz`
+`wget http://tsung.erlang-projects.org/dist/tsung-1.5.1.tar.gz`
 
-`tar xzf tsung-1.5.0.tar.gz`
+`tar xzf tsung-1.5.1.tar.gz`
 
-`cd tsung-1.5.0`
+`cd tsung-1.5.1`
 
-`./configure --prefix=$HOME/opt/tsung-1.5.0`
+`./configure --prefix=$HOME/opt/tsung-1.5.1`
 
 `make install`
 
@@ -127,17 +127,17 @@ From ec2 instance
 ---------
 ## Start Tsung test
 
-`~/opt/tsung-1.5.0/bin/tsung -f t1.xml start`
+`~/opt/tsung-1.5.1/bin/tsung -f t1.xml start`
 
-`~/opt/tsung-1.5.0/bin/tsung -f status`
+`~/opt/tsung-1.5.1/bin/tsung -f status`
 
 ### Reporting
 
 Create html report
-`~/opt/tsung-1.5.0/lib/tsung/bin/tsung_stats.pl`
+`~/opt/tsung-1.5.1/lib/tsung/bin/tsung_stats.pl`
 
 Create only png files
-`~/opt/tsung-1.5.0/bin/tsplot "first" tsung.log  -d ~/outputdir`
+`~/opt/tsung-1.5.1/bin/tsplot "first" tsung.log  -d ~/outputdir`
 
 Start simple http server
 `python -m SimpleHTTPServer`
