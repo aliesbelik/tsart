@@ -1,5 +1,6 @@
 #Setup tsung for AmazonLinux
 
+
 This is a note for setup erlang-17.5 and Tsung-1.5.1 on AmazonLinux.
 
 Reference -> http://www.slideshare.net/ngocdaothanh/tsung-13985127 (Tsung 1.4.2)
@@ -49,6 +50,10 @@ Edit `/etc/sysctl.conf`
 
 ---------
 ## Install Erlang
+
+`sudo yum install erlang`
+
+## Install Erlang from source
 
 `mkdir ~/opt`
 
