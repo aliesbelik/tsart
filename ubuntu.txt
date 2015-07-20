@@ -4,42 +4,42 @@ sudo apt-get install libssl-dev
 sudo apt-get install libncurses5-dev
 sudo apt-get install git
 
------------------------
+------------------------------------------------------------------------------------------
 
 cd
 mkdir opt
 mkdir src
 cd src/
 
-wget http://www.erlang.org/download/otp_src_R15B02.tar.gz
-tar xzf otp_src_R15B02.tar.gz 
-cd otp_src_R15B02/
-./configure --prefix=/home/ubuntu/opt/erlang-R15B02
+wget http://www.erlang.org/download/otp_src_17.5.tar.gz
+tar xzf otp_src_17.5.tar.gz 
+cd otp_src_17.5/
+./configure --prefix=/home/ubuntu/opt/erlang-17.5
 make install
 
 cd ..
-wget http://tsung.erlang-projects.org/dist/tsung-1.4.2.tar.gz
-tar xzf tsung-1.4.2.tar.gz
+wget http://tsung.erlang-projects.org/dist/tsung-1.5.1.tar.gz
+tar xzf tsung-1.5.1.tar.gz
 
 git clone git://github.com/wulczer/tsung_ws.git
-cp tsung_ws/tsung-1.0.dtd tsung-1.4.2
-cp tsung_ws/include/ts_websocket.hrl tsung-1.4.2/include/
-cp tsung_ws/src/tsung_controller/ts_config_websocket.erl tsung-1.4.2/src/tsung_controller/
-cp tsung_ws/src/tsung/ts_websocket.erl tsung-1.4.2/src/tsung
+cp tsung_ws/tsung-1.0.dtd tsung-1.5.1
+cp tsung_ws/include/ts_websocket.hrl tsung-1.5.1/include/
+cp tsung_ws/src/tsung_controller/ts_config_websocket.erl tsung-1.5.1/src/tsung_controller/
+cp tsung_ws/src/tsung/ts_websocket.erl tsung-1.5.1/src/tsung
 
-cd tsung-1.4.2/
-export PATH=/home/ubuntu/opt/erlang-R15B02/bin:$PATH
-./configure --prefix=$HOME/opt/tsung-1.4.2-ws
+cd tsung-1.5.1/
+export PATH=/home/ubuntu/opt/erlang-17.5/bin:$PATH
+./configure --prefix=$HOME/opt/tsung-1.5.1-ws
 make install
 
------------------------
+------------------------------------------------------------------------------------------
 
 gnuplot
 sudo apt-get install gnuplot
-perl ~/opt/tsung-1.4.2-ws/lib/tsung/bin/tsung_stats.pl 
+perl ~/opt/tsung-1.5.1-ws/lib/tsung/bin/tsung_stats.pl 
 sudo cpan Template
 
------------------------
+------------------------------------------------------------------------------------------
 
 sudo vim /etc/security/limits.conf
 sudo vim /etc/sysctl.conf
@@ -49,10 +49,10 @@ exit
 ssh ...
 ulimit -n
 
------------------------
+------------------------------------------------------------------------------------------
 
 sudo vim /etc/environment 
-> Add /home/ubuntu/opt/erlang-R15B02/bin to PATH
+> Add /home/ubuntu/opt/erlang-17.5/bin to PATH
 
 vim ~/.ssh/id_dsa
 > Add SSH private key
@@ -60,7 +60,7 @@ chmod 600 ~/.ssh/id_dsa
 
 ssh localhost erl
 
------------------------
+------------------------------------------------------------------------------------------
 
 sudo apt-get install npm
 sudo npm install http-server -g
